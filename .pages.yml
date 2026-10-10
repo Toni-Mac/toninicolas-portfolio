@@ -8,7 +8,7 @@ content:
         label: "Navigation"
         type: object
         fields:
-          - { name: cv_url, label: "Resume/CV URL", type: string }
+          - { name: cv_url, label: "Resume PDF (upload a new file here to replace — update this often)", type: file }          
           - { name: email, label: "Contact Email", type: string }
           - { name: linkedin_url, label: "LinkedIn URL", type: string }
       - name: hero
