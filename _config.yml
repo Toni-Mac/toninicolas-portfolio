@@ -1,4 +1,13 @@
 title: Toni Nicolas — Product Designer Portfolio
 description: Product Designer (UX/UI) specializing in CMS & digital product design
 url: https://toninicolas.com
-baseurl: /toninicolas-portfolio
+baseurl: ""
+
+plugins: []
+exclude:
+  - README.md
+  - node_modules
+
+collections:
+  work:
+    output: false
