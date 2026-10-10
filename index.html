@@ -1,0 +1,161 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toni Nicolas — Product Designer Portfolio</title>
+<meta name="description" content="{{ site.description }}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+
+<div class="brand-stripe"></div>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <div class="shell nav">
+    <a href="#top" class="logo">Toni Nicolas</a>
+    <div class="nav-links">
+      <a href="#work">01 · Work</a>
+      <a href="#about">02 · About</a>
+      <a href="#experience">03 · Experience</a>
+      <a href="{{ site.data.site.nav.cv_url }}" class="btn btn-outline">Download CV</a>
+      <a href="mailto:{{ site.data.site.nav.email }}" class="btn btn-solid">Contact Me</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div id="top" class="hero-wrap">
+  <div class="shell hero">
+    <div class="hero-left">
+      <div class="eyebrow-row">
+        <span class="eyebrow">{{ site.data.site.hero.eyebrow }}</span>
+        <span class="rule"></span>
+      </div>
+      <h1 class="h1">{{ site.data.site.hero.headline }}</h1>
+      <p class="subhead">{{ site.data.site.hero.subhead }}</p>
+      <div class="bullet-list">
+        {% for b in site.data.site.hero.bullets %}
+        <div class="bullet"><span class="chevron">&gt;</span><p>{{ b }}</p></div>
+        {% endfor %}
+      </div>
+      <div class="cta-row">
+        <a href="#work" class="btn btn-solid">See selected work</a>
+        <a href="{{ site.data.site.nav.linkedin_url }}" class="btn btn-outline">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="watermark-tm">tm</div>
+      <div class="strengths-card">
+        <div class="strengths-label">{{ site.data.site.hero.strengths_label }}</div>
+        {% for s in site.data.site.hero.strengths %}
+        <div class="strength-row"><span class="check">✓</span><span>{{ s }}</span></div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WORK -->
+<div id="work" class="work-wrap">
+  <div class="shell">
+    <div class="eyebrow-row" style="margin-bottom:16px;">
+      <span class="eyebrow">01 — Work</span>
+      <span class="rule"></span>
+    </div>
+    <div class="section-head">
+      <h2 class="h2">Selected Work</h2>
+      <span class="section-sub">Four platforms, four different constraints.</span>
+    </div>
+    <div class="work-grid">
+      {% for item in site.data.work.items %}
+      <a href="{{ item.url }}" class="work-card">
+        <span class="work-number">{{ item.number }}</span>
+        <span class="work-tag">{{ item.tag }}</span>
+        <h3 class="work-title">{{ item.title }}</h3>
+        <p class="work-desc">{{ item.description }}</p>
+        <div class="work-stats">
+          {% for stat in item.stats %}
+          <div><div class="stat-value">{{ stat.value }}</div><div class="stat-label">{{ stat.label }}</div></div>
+          {% endfor %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="about-wrap">
+  <div class="shell">
+    <div class="eyebrow-row" style="margin-bottom:48px;">
+      <span class="eyebrow">{{ site.data.site.about.eyebrow }}</span>
+      <span class="rule"></span>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo-col">
+        <img src="{{ site.data.site.about.photo | relative_url }}" alt="Toni Nicolas" class="about-photo">
+      </div>
+      <div class="about-left">
+        <h2 class="h2" style="margin-bottom:20px;">About</h2>
+        {% for p in site.data.site.about.paragraphs %}
+        <p class="body-text">{{ p }}</p>
+        {% endfor %}
+        <div class="industries-label">Industries</div>
+        <div class="pill-row">
+          {% for ind in site.data.site.about.industries %}
+          <span class="pill">{{ ind }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="about-right">
+        {% for h in site.data.site.about.highlights %}
+        <div class="bullet"><span class="chevron">&gt;</span><p><strong>{{ h.label }}</strong> — {{ h.text }}</p></div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div id="experience" class="experience-wrap">
+  <div class="shell">
+    <div class="eyebrow-row" style="margin-bottom:48px;">
+      <span class="eyebrow">03 — Experience</span>
+      <span class="rule"></span>
+    </div>
+    <h2 class="h2" style="margin-bottom:40px;">Experience</h2>
+    <div class="exp-list">
+      {% for job in site.data.experience.items %}
+      <div class="exp-row">
+        <div class="exp-title">{{ job.title }} <span class="exp-company">— {{ job.company }}</span></div>
+        <div class="exp-dates">{{ job.dates }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="contact-wrap">
+  <div class="shell contact">
+    <div class="eyebrow-row" style="width:100%;">
+      <span class="eyebrow">{{ site.data.site.contact.eyebrow }}</span>
+      <span class="rule"></span>
+    </div>
+    <h2 class="h2 contact-headline">{{ site.data.site.contact.headline }}</h2>
+    <div class="cta-row">
+      <a href="mailto:{{ site.data.site.contact.email }}" class="btn btn-solid btn-lg">{{ site.data.site.contact.email }}</a>
+      <a href="{{ site.data.site.contact.linkedin_url }}" class="btn btn-outline btn-lg">LinkedIn ↗</a>
+    </div>
+    <div class="footer-line">{{ site.data.site.contact.location_line }}</div>
+  </div>
+</div>
+
+</body>
+</html>

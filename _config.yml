@@ -1,0 +1,10 @@
+title: Toni Nicolas — Product Designer Portfolio
+description: Product Designer (UX/UI) specializing in CMS & digital product design
+url: ""
+baseurl: ""
+
+# GitHub Pages builds this with Jekyll automatically — no build step needed.
+plugins: []
+exclude:
+  - README.md
+  - node_modules
