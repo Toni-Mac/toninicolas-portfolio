@@ -1,4 +1,17 @@
 content:
+  - name: settings
+    label: "Site Settings"
+    type: file
+    path: _config.yml
+    fields:
+      - { name: title, label: "Site Title", type: string }
+      - { name: description, label: "Site Description", type: string }
+      - name: url
+        label: "Custom domain (e.g. https://toninicolas.com) — leave blank if not using one"
+        type: string
+      - name: baseurl
+        label: "Subpath — leave as /toninicolas-portfolio on github.io, set to empty \"\" once a custom domain is live"
+        type: string
   - name: site
     label: "Site Content"
     type: file
