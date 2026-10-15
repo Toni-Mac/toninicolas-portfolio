@@ -1,7 +1,7 @@
 ---
 order: 3
 number: "03"
-url: https://tmndesigns.com/portfoli/premiere-suites/
+url: https://tmndesigns.com/portfolio/premiere-suites/
 tag: Guest Portal App
 title: Custom Guest Portal
 description: Designed a self-serve portal for a long-term stay platform, giving
