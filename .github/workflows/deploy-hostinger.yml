@@ -1,12 +1,15 @@
-name: Build and deploy to Hostinger
+name: Build and publish to site-build branch
 
 on:
   push:
     branches: [main]
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+
 jobs:
-  build-and-deploy:
+  build-and-publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -23,11 +26,10 @@ jobs:
       - name: Build site
         run: jekyll build --destination _site
 
-      - name: Deploy over FTP to Hostinger
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Publish built site to site-build branch
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./_site/
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: site-build
+          force_orphan: true
