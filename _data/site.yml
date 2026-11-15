@@ -48,3 +48,7 @@ contact:
   email: "contact@tmndesigns.com"
   linkedin_url: "https://www.linkedin.com/in/toninicolas/"
   location_line: "Mount Vernon, Washington · © 2026 Toni Nicolas"
+
+analytics:
+  ga4_id: "G-E3ZS5PY51X"
+  clarity_id: "zdybk3hvdp"
