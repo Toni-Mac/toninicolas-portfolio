@@ -75,7 +75,7 @@ layout: null
     <div class="work-grid">
       {% assign sorted_work = site.work | sort: "order" %}
       {% for item in sorted_work %}
-      <a href="{{ item.url }}" class="work-card">
+      <a href="{{ item.link }}" class="work-card">
         <span class="work-number">{{ item.number }}</span>
         <span class="work-tag">{{ item.tag }}</span>
         <h3 class="work-title">{{ item.title }}</h3>
