@@ -53,13 +53,13 @@ content:
     format: yaml-frontmatter
     filename: "{fields.order}-{fields.title}.md"
     view:
-      fields: [title, tag, url]
+      fields: [title, tag, link]
       primary: title
       sort: [order]
     fields:
       - { name: order, label: "Display order (1, 2, 3…)", type: number }
       - { name: number, label: "Number badge shown on card (e.g. 01)", type: string }
-      - { name: url, label: "Case study link — edit this to update where the card goes", type: string }
+      - { name: link, label: "Case study link — edit this to update where the card goes", type: string }
       - { name: tag, label: "Category tag", type: string }
       - { name: title, label: "Title", type: string }
       - { name: description, label: "Description", type: text }
