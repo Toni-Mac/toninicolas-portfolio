@@ -11,6 +11,12 @@ content:
           - { name: cv_url, label: "Resume PDF (upload a new file here to replace — update this often)", type: file }          
           - { name: email, label: "Contact Email", type: string }
           - { name: linkedin_url, label: "LinkedIn URL", type: string }
+      - name: analytics 
+        label: "Analytics" 
+        type: object
+        fields:
+          - { name: ga4_id, label: "Google Analytics 4 ID (G-XXXXXXXXXX)", type: string }
+          - { name: clarity_id, label: "Microsoft Clarity project ID", type: string }
       - name: hero
         label: "Hero Section"
         type: object
